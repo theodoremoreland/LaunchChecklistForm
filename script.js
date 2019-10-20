@@ -1,11 +1,12 @@
 window.addEventListener("load", function(event) {
+      visitPlanet();
       validateForm();
 });
 
 function validateForm() {
 
    document.addEventListener("submit", function(event) {
-
+         event.preventDefault();
          let pilotName = document.querySelector("[name=pilotName]").value;
          let copilotName = document.querySelector("[name=copilotName]").value;
          let fuelLevel = document.querySelector("[name=fuelLevel]").value;
@@ -29,7 +30,6 @@ function validateForm() {
          if (err1 || err2 || err3) {
             let errors = `${err1}${err2}${err3}`;
             alert(errors);
-            event.preventDefault();
           }
 
           else { updateShuttle(event, pilotName, copilotName, fuelLevel, cargoMass); }
@@ -53,8 +53,6 @@ function updateShuttle(event, pilotName, copilotName, fuelLevel, cargoMass) {
          faultyItems.style.visibility = 'hidden';
          launchStatus.innerHTML = `Shuttle is ready for launch`;
          launchStatus.style.color = `green`;
-         visitPlanet();
-         event.preventDefault();
    }
    else {
          faultyItems.style.visibility = 'visible';
@@ -62,7 +60,6 @@ function updateShuttle(event, pilotName, copilotName, fuelLevel, cargoMass) {
          launchStatus.style.color = `red`;
          fuelStatus.innerHTML = (fuelLevel < 10000) ? `Not enough fuel for the journey` : `Fuel level high enough for launch`;
          cargoStatus.innerHTML = (cargoMass > 10000) ? `There is too much mass for the shuttle to take off` : `Cargo mass low enough for launch`;
-         event.preventDefault();
    }
 }
 
@@ -71,7 +68,7 @@ function visitPlanet() {
    let url = "https://handlers.education.launchcode.org/static/planets.json"
    fetch(url).then(function(response) {
       response.json().then(function(json) {
-         let idx = Math.round(Math.random() * (json.length - 1));
+         let idx = Math.floor(Math.random() * (json.length));
          let planet = json[idx];
          missionTarget.innerHTML = `<h2>Mission Destination</h2>
          <ol>
