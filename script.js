@@ -1,10 +1,9 @@
-window.addEventListener("load", function(event) {
+window.addEventListener("load", function() {
       visitPlanet();
       validateForm();
 });
 
 function validateForm() {
-
    document.addEventListener("submit", function(event) {
          event.preventDefault();
          let pilotName = document.querySelector("[name=pilotName]").value;
@@ -76,7 +75,7 @@ function visitPlanet() {
             <li>Diameter: ${planet.diameter}</li>
             <li>Star: ${planet.stat}</li>
             <li>Distance from Earth: ${planet.distance}</li>
-            <li>Number of Moons: ${planet.moon}</li>
+            <li>Number of Moons: ${planet.moons}</li>
          </ol>
          <img src="${planet.image}">`
       });
