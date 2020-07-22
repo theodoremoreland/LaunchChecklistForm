@@ -29,3 +29,7 @@ An HTML and JavaScript form that validates whether or not your hypothetical spac
 ## Not Enough Fuel
 
 <img src="presentation/7.PNG" width="700">
+
+## Ready for Launch!
+
+<img src="presentation/8.PNG" width="700">
