@@ -19,6 +19,14 @@ div {
     padding: 10px;
 }
 
+.launchField {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 8 0;
+}
+
 #launchStatusCheck {
     background-color: #ECF0F1;
     text-align: center;
