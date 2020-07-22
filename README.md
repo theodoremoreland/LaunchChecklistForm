@@ -18,7 +18,7 @@ An HTML and JavaScript form that validates whether or not your hypothetical spac
 
 <img src="presentation/4.PNG" width="700">
 
-## Numbers in Cargo and/or Fuel Data
+## Letters in Cargo and/or Fuel Data
 
 <img src="presentation/5.PNG" width="700">
 
